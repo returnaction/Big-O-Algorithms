@@ -7,14 +7,19 @@ namespace Algorithmic_Problem_Solving_Problems
         static void Main(string[] args)
         {
             // Problem One
-
             //string str = "difference";
             //DetectDublicate(str);
 
 
             // Problem Two
-            string str = "Nikita";
-            ReverseString2(str);
+            //string str = "Nikita";
+            //ReverseString2(str);
+
+
+            // Problem Three
+            //string str = "Nikita";
+            //var result = CountVowelsConsts(str);
+
         }
 
         // Function to detect and print duplicate character from the given string
@@ -27,8 +32,7 @@ namespace Algorithmic_Problem_Solving_Problems
                 if (letters.ContainsKey(str[i]))
                 {
                     int temp = letters[str[i]];
-                    letters.Remove(str[i]);
-                    letters.Add(str[i] , temp + 1);
+                    letters[str[i]] = temp + 1;
                 }
                 else
                 {
@@ -43,7 +47,6 @@ namespace Algorithmic_Problem_Solving_Problems
             }
         }
 
-
         // Problem Two Function that reverses a string, utilizing recursion
         private static void ReverseString(string str)
         {
@@ -56,7 +59,6 @@ namespace Algorithmic_Problem_Solving_Problems
         }
 
         // Problem Two Function that reverses a string, utilizing recursion
-
         private static void ReverseString2(string str)
         {
             if (str == null || str.Length <= 1)
@@ -68,7 +70,32 @@ namespace Algorithmic_Problem_Solving_Problems
             }
         }
 
+        // Problem Three Function that counts the number of vowels and consonants within a given string
+        public static Dictionary<string, int> CountVowelsConsts(string str)
+        {
+            Dictionary<string, int> result = new();
 
+            result.Add("vowels", 0);        
+            result.Add("consts", 0);        
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' || str[i] == 'y')
+                {
+                    int temp = result["vowels"];
+                    result["vowels"] = temp + 1;
+                }
+                else
+                {
+                    int temp = result["consts"];
+                    result["consts"] = temp + 1;
+                }
+
+            }
+
+            return result;
+
+        }
 
 
 
