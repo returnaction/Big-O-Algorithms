@@ -8,11 +8,16 @@ namespace Algorithmic_Problem_Solving_Problems
         {
             // Problem One
 
-            string str = "difference";
-            DetectDublicate(str);
+            //string str = "difference";
+            //DetectDublicate(str);
 
+
+            // Problem Two
+            string str = "Nikita";
+            ReverseString2(str);
         }
 
+        // Function to detect and print duplicate character from the given string
         public static void DetectDublicate(string str)
         {
             SortedDictionary<char, int> letters = new();
@@ -37,5 +42,36 @@ namespace Algorithmic_Problem_Solving_Problems
                     Console.WriteLine($"{letter.Key} = {letter.Value} times" );
             }
         }
+
+
+        // Problem Two Function that reverses a string, utilizing recursion
+        private static void ReverseString(string str)
+        {
+            if(str.Length > 1)
+            {
+                ReverseString(str.Substring(1));
+            }
+
+            Console.Write(str[0]);
+        }
+
+        // Problem Two Function that reverses a string, utilizing recursion
+
+        private static void ReverseString2(string str)
+        {
+            if (str == null || str.Length <= 1)
+                Console.WriteLine(str);
+            else
+            {
+                Console.Write(str[str.Length - 1]);
+                ReverseString2(str.Substring(0, (str.Length - 1)));
+            }
+        }
+
+
+
+
+
+
     }
 }
