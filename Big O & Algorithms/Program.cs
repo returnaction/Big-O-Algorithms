@@ -1,4 +1,5 @@
-﻿namespace Big_O___Algorithms
+﻿
+namespace Big_O___Algorithms
 {
     internal class Program
     {
@@ -23,12 +24,27 @@
 
             // Task 3: Repeated Names
 
-            string[] names = { "Nikita", "Kastet", "John" };
-            string[] names2 = { "Nikita", "Kastet", "Nikita" };
-            Console.WriteLine(RepeatedNames(names));
-            Console.WriteLine(RepeatedNames(names2));
+            //string[] names = { "Nikita", "Kastet", "John" };
+            //string[] names2 = { "Nikita", "Kastet", "Nikita" };
+            //Console.WriteLine(RepeatedNames(names));
+            //Console.WriteLine(RepeatedNames(names2));
+
+
+            // Task 4: SortList
+            int[] arr = { 5, 3, 2, 1, 4 };
+
+            Console.WriteLine("\tBefore sorting:");
+            foreach (int num in arr)
+                Console.Write($"{num} "); ;
+
+            Console.WriteLine("\n\tAfter sorting:");
+            MySort(arr);
+
+            foreach(int num in arr)
+                Console.Write($"{num} ");
         }
 
+       
         // Time complexity O(1) constant
         public static bool CheckForEven(int number)
         {
@@ -61,5 +77,28 @@
             }
             return false;
         }
+
+        // Time complexity O(n squared) quadratic
+        public static void MySort(int[] arr)
+        {
+            bool swapped = true;
+
+            while (swapped)
+            {
+                swapped = false;
+
+                for (int i = 0; i < arr.Length - 1; i++)
+                {
+                    if (arr[i] > arr[i + 1])
+                    {
+                        int temp = arr[i];
+                        arr[i] = arr[i + 1];
+                        arr[i + 1] = temp;
+                        swapped = true;
+                    }
+                }
+            }
+        }
+
     }
 }
