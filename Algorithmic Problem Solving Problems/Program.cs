@@ -20,6 +20,11 @@ namespace Algorithmic_Problem_Solving_Problems
             //string str = "Nikita";
             //var result = CountVowelsConsts(str);
 
+
+            // Problem Four
+            string str = "12345";
+            Console.WriteLine(SumAllNumericValues(str));
+
         }
 
         // Function to detect and print duplicate character from the given string
@@ -94,10 +99,26 @@ namespace Algorithmic_Problem_Solving_Problems
             }
 
             return result;
-
         }
 
+        // Problem Four Function that computes the total sum of all numeric values in the string
+        public static int SumAllNumericValues(string str)
+        {
+            int result = 0;
 
+            for (int i = 0; i < str.Length; i++)
+            {
+                //result += int.Parse($"{str[i]}");
+                //result += Convert.ToInt32(str[i]);
+
+                //if (int.TryParse(str[i].ToString(), out int number))
+                //{
+                //    result += number;
+                //}
+            }
+
+            return result;
+        }
 
 
     }
