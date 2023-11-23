@@ -10,14 +10,23 @@
             //Console.WriteLine(CheckForEven(3));
             //Console.WriteLine(CheckForEven(2));
 
-            // Task 2" Less than 100
-            int[] arr = [2, 55, 6, 1, 5];
-            int[] arr2 = [6, 3, 4, 17,101];
 
-            Console.WriteLine("\nIf number less than 100");
-            Console.WriteLine(LessThan100(arr));
-            Console.WriteLine(LessThan100(arr2));
+            // Task 2: Less than 100
 
+            //int[] arr = [2, 55, 6, 1, 5];
+            //int[] arr2 = [6, 3, 4, 17,101];
+
+            //Console.WriteLine("\nIf number less than 100");
+            //Console.WriteLine(LessThan100(arr));
+            //Console.WriteLine(LessThan100(arr2));
+
+
+            // Task 3: Repeated Names
+
+            string[] names = { "Nikita", "Kastet", "John" };
+            string[] names2 = { "Nikita", "Kastet", "Nikita" };
+            Console.WriteLine(RepeatedNames(names));
+            Console.WriteLine(RepeatedNames(names2));
         }
 
         // Time complexity O(1) constant
@@ -37,6 +46,20 @@
             }
 
             return true;
+        }
+
+        // Time complexity O(n squared) quadratic
+        public static bool RepeatedNames(string[] arr)
+        {
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[i] == arr[j])
+                        return true;
+                }
+            }
+            return false;
         }
     }
 }
