@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Algorithmic_Problem_Solving_Problems
 {
@@ -22,8 +23,18 @@ namespace Algorithmic_Problem_Solving_Problems
 
 
             // Problem Four
-            string str = "12345";
-            Console.WriteLine(SumAllNumericValues(str));
+            //string str = "12345";
+            //Console.WriteLine(SumAllNumericValues(str));
+
+            // Problem Five
+            int number = 11;
+            int number2 = 4;
+            int number3 = 18;
+            int number4 = 27;
+            Console.WriteLine(Difference15(number));
+            Console.WriteLine(Difference15(number2));
+            Console.WriteLine(Difference15(number3));
+            Console.WriteLine(Difference15(number4));
 
         }
 
@@ -45,17 +56,17 @@ namespace Algorithmic_Problem_Solving_Problems
                 }
             }
 
-            foreach(KeyValuePair<char, int> letter in letters)
+            foreach (KeyValuePair<char, int> letter in letters)
             {
                 if (letter.Value > 1)
-                    Console.WriteLine($"{letter.Key} = {letter.Value} times" );
+                    Console.WriteLine($"{letter.Key} = {letter.Value} times");
             }
         }
 
         // Problem Two Function that reverses a string, utilizing recursion
         private static void ReverseString(string str)
         {
-            if(str.Length > 1)
+            if (str.Length > 1)
             {
                 ReverseString(str.Substring(1));
             }
@@ -80,8 +91,8 @@ namespace Algorithmic_Problem_Solving_Problems
         {
             Dictionary<string, int> result = new();
 
-            result.Add("vowels", 0);        
-            result.Add("consts", 0);        
+            result.Add("vowels", 0);
+            result.Add("consts", 0);
 
             for (int i = 0; i < str.Length; i++)
             {
@@ -120,6 +131,19 @@ namespace Algorithmic_Problem_Solving_Problems
             return result;
         }
 
+        public static int Difference15(int num)
+        {
+            // if difference more than 10 return double of difference
 
+            const int number = 15;
+
+            int difference = number - num;
+
+            if (difference < 0)
+                difference *= -1;
+
+
+            return difference > 10 ? difference * 2 : difference;
+        }
     }
 }
