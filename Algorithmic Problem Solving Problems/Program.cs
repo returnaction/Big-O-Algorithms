@@ -26,15 +26,22 @@ namespace Algorithmic_Problem_Solving_Problems
             //string str = "12345";
             //Console.WriteLine(SumAllNumericValues(str));
 
+
             // Problem Five
-            int number = 11;
-            int number2 = 4;
-            int number3 = 18;
-            int number4 = 27;
-            Console.WriteLine(Difference15(number));
-            Console.WriteLine(Difference15(number2));
-            Console.WriteLine(Difference15(number3));
-            Console.WriteLine(Difference15(number4));
+            //int number = 11;
+            //int number2 = 4;
+            //int number3 = 18;
+            //int number4 = 27;
+            //Console.WriteLine(Difference15(number));
+            //Console.WriteLine(Difference15(number2));
+            //Console.WriteLine(Difference15(number3));
+            //Console.WriteLine(Difference15(number4));
+
+
+            // Problem Six
+            string str = "The quick brown fox";
+            Console.WriteLine(str);
+            PigLatinConverter(str);
 
         }
 
@@ -131,6 +138,7 @@ namespace Algorithmic_Problem_Solving_Problems
             return result;
         }
 
+        // Create a function that calculates the difference between a given number and 15. If the difference is grater than 10, return double the absolute difference;
         public static int Difference15(int num)
         {
             // if difference more than 10 return double of difference
@@ -145,6 +153,29 @@ namespace Algorithmic_Problem_Solving_Problems
 
             return difference > 10 ? difference * 2 : difference;
         }
+
+
+        // Create a pig latin Converter function that can translate a fiven stting into Pig Latin 
+        public static void PigLatinConverter(string str)
+        {
+            string[] words = str.Split(" ");
+
+            for (int i = 0; i < words.Length; i++)
+            {
+                words[i] = ConvertToPigLatin(words[i]);
+            }
+
+            string result = string.Join(" ", words);
+            result = result.ToLower();
+            result = $"{char.ToUpper(result[0])}{result.Substring(1)}"; 
+
+            Console.WriteLine(result);
+            // Helper method
+            string ConvertToPigLatin(string word)
+            {
+                return word.Substring(1) + word[0] + "ay";
+            }
+        }
+
     }
 }
-//ddd
