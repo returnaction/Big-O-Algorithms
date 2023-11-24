@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Net.Sockets;
 using System.Reflection.Metadata.Ecma335;
 
 namespace Algorithmic_Problem_Solving_Problems
@@ -39,9 +40,14 @@ namespace Algorithmic_Problem_Solving_Problems
 
 
             // Problem Six
-            string str = "The quick brown fox";
-            Console.WriteLine(str);
-            PigLatinConverter(str);
+            //string str = "The quick brown fox";
+            //Console.WriteLine(str);
+            //PigLatinConverter(str);
+
+
+            // Problem Seven
+            int[] numbers = { 5, 2, 6, 11 };
+            Console.WriteLine(LargestNumber(numbers));
 
         }
 
@@ -138,7 +144,7 @@ namespace Algorithmic_Problem_Solving_Problems
             return result;
         }
 
-        // Create a function that calculates the difference between a given number and 15. If the difference is grater than 10, return double the absolute difference;
+        // Problem Five Create a function that calculates the difference between a given number and 15. If the difference is grater than 10, return double the absolute difference;
         public static int Difference15(int num)
         {
             // if difference more than 10 return double of difference
@@ -154,8 +160,7 @@ namespace Algorithmic_Problem_Solving_Problems
             return difference > 10 ? difference * 2 : difference;
         }
 
-
-        // Create a pig latin Converter function that can translate a fiven stting into Pig Latin 
+        // Problem Six Create a pig latin Converter function that can translate a fiven stting into Pig Latin 
         public static void PigLatinConverter(string str)
         {
             string[] words = str.Split(" ");
@@ -176,6 +181,29 @@ namespace Algorithmic_Problem_Solving_Problems
                 return word.Substring(1) + word[0] + "ay";
             }
         }
+
+        // Problem Seven Create a function that calculates all possible permutations of a given string
+        public static int LargestNumber(int[] arr)
+        {
+            //int highestNumber = arr[0];
+
+            //for (int i = 1; i < arr.Length; i++)
+            //{
+            //    if (arr[i] > highestNumber)
+            //        highestNumber = arr[i];
+
+            //}
+
+            //return highestNumber;
+
+            return arr.Max();
+        }
+
+        // Create a function that calculates all possible permutations of a given string
+        
+
+        // 
+
 
     }
 }
